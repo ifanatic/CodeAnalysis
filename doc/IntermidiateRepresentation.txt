@@ -1,39 +1,39 @@
-<Type name=”<string>” 
-kind=”<string>” 
-const=”<boolean>”
-ref=”<string>”
-nullable=”<bool>”>
+<Type name="<string>" 
+kind="<string>" 
+const="<boolean>"
+ref="<string>"
+nullable="<bool>">
 <Type kind=’pointer’/>
 </Type>
 
 kind = class, enum, struct, union, internal (int, bool, char), array, generic, dynamic, pointer, reference, interface, void, event
 
-<VarDecl name=”<string>” 
-auto=”<boolean>”
-constexpr=”<boolean>”
-volatile=”<boolean>”
-id=”<hash>”>
+<VarDecl name="<string>" 
+auto="<boolean>"
+constexpr="<boolean>"
+volatile="<boolean>"
+id="<hash>">
 	<Type/>
 	<Init/>
 </VarDecl>
 
 Ссылка на переменную
-<VarRef ref=”<hash>” name=”<string>” />
+<VarRef ref="<hash>" name="<string>" />
 
 Литерал
-<lit:Integer value=“<string>” />
+<lit:Integer value="<string>" />
 <lit:Character … />
 <lit:Decimal …/>
 
 
-<op:Binary kind=”<string>” assign=”<boolean>”>
+<op:Binary kind="<string>" assign="<boolean>">
 
 </op:Binary >
 
 <op:Unary
-kind=”<string>”
-prefix=”<boolean>”
-modify=”<boolean>”>
+kind="<string>"
+prefix="<boolean>"
+modify="<boolean>">
 
 </op:Unary>
 
@@ -41,19 +41,19 @@ modify=”<boolean>”>
 
 <op:TypeOf></op:TypeOf>
 
-Оператор “is” (C#)
+Оператор "is" (C#)
 
 <op:IsType>
 	<Object/> (что угодно)
 	<Type/>
 </op:IsType>
 
-<op:Cast kind=”<string>”>
+<op:Cast kind="<string>">
 	<Type/>
 	<Object/>
 </op:Cast>
 
-для c++ атрибут kind={ dynamic, static, const, reinterpret, simple, functional, postfix } (simple (int)a, functional int(a), оператор “as” (C#) )
+для c++ атрибут kind={ dynamic, static, const, reinterpret, simple, functional, postfix } (simple (int)a, functional int(a), оператор "as" (C#) )
 
 Получение адреса элемента (&)
 
@@ -72,9 +72,9 @@ modify=”<boolean>”>
 	</Params>
 </op:Indexer>
 
-<Namespace id=”<hash>” name=”<string>” />
+<Namespace id="<hash>" name="<string>" />
 
-<op:NamespaceUsage name=”<name>” ref=”<hash>” alias=”<string>” />
+<op:NamespaceUsage name="<name>" ref="<hash>" alias="<string>" />
 
 Использование объекта из пространства имен (С++)
 
@@ -86,7 +86,7 @@ modify=”<boolean>”>
 
 Объявление синонима для типа (С++)
 
-<op:Typedef alias=”<string>”> 
+<op:Typedef alias="<string>"> 
 	<Type />
 </op:Typedef>
 
@@ -121,21 +121,21 @@ modify=”<boolean>”>
 	</EnumMembers>
 </Enum>
 
-<Union name=”<string>” id=”<hash>”>
-	<Member name=”<string>”>
+<Union name="<string>" id="<hash>">
+	<Member name="<string>">
 		<Type />
 	</Member>	
 </Union>
 
-<Method id=”<hash>”>
-	<MethodDecl file=”<string>”/>
-	<MethodDef file=”<string>”/>
+<Method id="<hash>">
+	<MethodDecl file="<string>"/>
+	<MethodDef file="<string>"/>
 </Method>
 
-<MethodDecl 	id=”<hash>”
-name=”<string>” 
-ref=”<hash>”
-kind=”<string>”>
+<MethodDecl 	id="<hash>"
+name="<string>" 
+ref="<hash>"
+kind="<string>">
 <Return>
 	<Type />
 </Return>
@@ -149,11 +149,11 @@ kind=”<string>”>
 	</FriendTo>
 	
 <Modifiers>
-	<Modifier name=”” />
+	<Modifier name="" />
 </Modifiers>
 
 <Qualifiers>
-	<Qualifier name=”<string>” />
+	<Qualifier name="<string>" />
 </Qualifiers>
 
 <GenericArgs>
@@ -161,7 +161,7 @@ kind=”<string>”>
 </GenericArgs>
 
 <Args>
-	<Arg id=”<hash>” name=”<string>” >
+	<Arg id="<hash>" name="<string>" >
 		<Type />
 		<DefaultValue> ?
 			...
@@ -171,19 +171,19 @@ kind=”<string>”>
 </MethodDecl>
 
 kind = constructor, destructor, method, indexer
-Modifier:name = "new", "public", "protected", "internal", "private", "static", "virtual", "sealed", "override", "abstract", "extern", “constexpr”, “async”, “unsafe”
+Modifier:name = "new", "public", "protected", "internal", "private", "static", "virtual", "sealed", "override", "abstract", "extern", "constexpr", "async", "unsafe"
 Qualifier:name = const, volatile, restrict
 DefaultValue = литерал, константа
 
 Реализация метода
 
-<MethodDef id=”<hash>” ref=”<hash>”>
+<MethodDef id="<hash>" ref="<hash>">
 <Attributes>
 		<Attribute />
 	</Attributes>
 
 	<Args>
-		<Arg id=”<hash>” name=”<string>”>
+		<Arg id="<hash>" name="<string>">
 			<Type />
 		</Arg>
 	</Args>
@@ -197,12 +197,12 @@ DefaultValue = литерал, константа
 
 Ссылка на использование метода
 
-<MethodRef ref=”<hash>” def=”<hash>” decl=”<hash>” /> 
+<MethodRef ref="<hash>" def="<hash>" decl="<hash>" /> 
 
 
 Объявление свойства (C#)
 
-<Property id=”<hash>” name=”<string>”>
+<Property id="<hash>" name="<string>">
 <Return>
 	<Type />
 </Return>
@@ -212,17 +212,17 @@ DefaultValue = литерал, константа
 	</Attributes>
 
 <Modifiers>
-	<Modifier name=”” />
+	<Modifier name="" />
 </Modifiers>
 
 <GetAccessor>
-	<Modifier name=”<string>”/>
+	<Modifier name="<string>"/>
 	<Body>
 	</Body>
 </GetAccessor>
 
 <SetAccessor>
-	<Modifier name=”<string>”/>
+	<Modifier name="<string>"/>
 	<Body>
 		… = <SetAccessor:Value/>
 	</Body>
@@ -230,7 +230,7 @@ DefaultValue = литерал, константа
 
 </Property>
 
-<PropertyRef ref=”<hash>” name=“<string>” />
+<PropertyRef ref="<hash>" name="<string>" />
 
 
 Property:Modifier:name =        "new"
@@ -244,7 +244,7 @@ Property:Modifier:name =        "new"
         "override"
         "abstract"
         "extern"
-        “unsafe”
+        "unsafe"
 
 GetAccessor:Modifier:name= "protected"
         "internal"
@@ -276,13 +276,13 @@ GetAccessor:Modifier:name= "protected"
 
 Объявление события (C#)
 
-<EventType id=”<hash>”>
+<EventType id="<hash>">
 <Attributes>
 		<Attribute />
 	</Attributes>
 
 <Modifiers>
-	<Modifier name=”” />
+	<Modifier name="" />
 </Modifiers>
 	
 	<Type>
@@ -312,14 +312,14 @@ Event:Modifier:name = "new", "public", "protected", "internal", "private", "stat
 
 Использование аттрибутов (C#)
 
-<Attibute name=”<string>” kind=”<string>”>
+<Attibute name="<string>" kind="<string>">
 	<Type>
 	</Type>
 
-	<Target name=”<string>” />
+	<Target name="<string>" />
 	
 	<Args>
-		<Arg name=”<string>” />
+		<Arg name="<string>" />
 	</Args>
 </Attibute>
 
@@ -336,18 +336,18 @@ type
 assembly
 module
 
-Attibute:kind = “global” или может быть пустым
+Attibute:kind = "global" или может быть пустым
 Attribute:Arg:name - необязательное
 
 Объявление делегатов (C#)
 
-<Delegate id=”<hash>” name=”<string>”>
+<Delegate id="<hash>" name="<string>">
 	<Attibutes>
 		<Attibute>
 	</Attributes>
 
 	<Modifiers>
-		<Modifier name=”<string>”>
+		<Modifier name="<string>">
 	</Modifiers>
 
 	<Return>
@@ -358,7 +358,7 @@ Attribute:Arg:name - необязательное
 	</VariantParams>
 
 	<Args>
-		<Arg name=”<string>”>
+		<Arg name="<string>">
 		<Type />
 	</Args>
 </Delegate>
@@ -374,7 +374,7 @@ unsafe
 Параметры для метода, делегата и т.д.
 
 <Args>
-	<Arg ref=”<hash>” name=”<string>” modifier=”<string>” paramarr=”[true|false]” ref=”[true|false]” out=”[true|false]” implicit=”[true|false]”>
+	<Arg ref="<hash>" name="<string>" modifier="<string>" paramarr="[true|false]" ref="[true|false]" out="[true|false]" implicit="[true|false]">
 		<Attibutes>
 			<Attibute>
 	</Attributes>
@@ -425,7 +425,7 @@ switch
 </ControllingExpression>
 
 <Sections>
-	<Section default=”<bool>”>
+	<Section default="<bool>">
 		<Labels>
 			<Label>
 				...
@@ -490,11 +490,11 @@ for
 
 label
 
-<Label id=”<hash>” name=“<string>” />
+<Label id="<hash>" name="<string>" />
 
 goto
 
-<GoTo ref=”<hash>”/>
+<GoTo ref="<hash>"/>
 
 throw
 
@@ -514,7 +514,7 @@ try-catch-finally
 	<Block />
 	
 	<CatchClauses>
-		<Catch general=”<boolean>”>
+		<Catch general="<boolean>">
 			<ClassType>
 				...
 			</ClassType>
@@ -604,7 +604,7 @@ class Map {
 </GenericParams>
 <Class name=’Map’/>
 
-(+C#) <Generic name=”<string>” default=”<string>”>
+(+C#) <Generic name="<string>" default="<string>">
 		<Constraints>
 			<Type />
 		</Constraints>
@@ -615,7 +615,7 @@ sort<int>(a,sizeof(a))
 (см. в <Call>)
 
 Классы С++/С#
-<Class id="<hash>" name="<string>" kind=”<string>” static=”[true|false]” abstract="[true|false]" sealed=”[true|false]” new=”[true|false]” access="<string>” partial=”[true|false]” unsafe=”[true|false]” anonymous=”[true|false]”>
+<Class id="<hash>" name="<string>" kind="<string>" static="[true|false]" abstract="[true|false]" sealed="[true|false]" new="[true|false]" access="<string>" partial="[true|false]" unsafe="[true|false]" anonymous="[true|false]">
 	<Attributes>
 		<Attribute />
 	</Attributes>
@@ -649,7 +649,7 @@ sort<int>(a,sizeof(a))
 </Class>
 
 Ссылка на класс
-<ClassRef name=”<string>” ref=”<hash>” access=”<string>” />
+<ClassRef name="<string>" ref="<hash>" access="<string>" />
 
 
 kind = class, struct, interface
@@ -657,13 +657,13 @@ access = public, private, protected, internal, friend
 
 Объявление поля
 
-<FieldDecl id=”<hash>” name=”<string>” constant=”[true|false]”>
+<FieldDecl id="<hash>" name="<string>" constant="[true|false]">
 	<Attributes>
 		<Attribute />
 	</Attributes>
 
 <Modifiers>
-	<Modifier name=”<string>” />
+	<Modifier name="<string>" />
 </Modifiers>
 
 <GenericArgs>
@@ -688,10 +688,10 @@ Field:Modifiers:Modifier:name=
         	"static"
         	"readonly"
         	"volatile"
-	“unsafe”
+	"unsafe"
 
 Ссылка на поле
-<FieldRef ref=”<hash>” name=”<string>” />
+<FieldRef ref="<hash>" name="<string>" />
 
 Cheched / Unchecked
 
@@ -713,12 +713,12 @@ await
 	<Call />
 </Await>
 
-<Block unsafe=”[true|false]”>
+<Block unsafe="[true|false]">
 </Block>
 
 Anonymous Functions (Lambda expressions)
 
-<Lambda modifier=”<string>” delegate=”[true|false]”>
+<Lambda modifier="<string>" delegate="[true|false]">
 	<Args>
 		<Arg />
 	</Args>
@@ -726,7 +726,7 @@ Anonymous Functions (Lambda expressions)
 	<Block />
 </Lambda>
 
-Lambda::modifier = none or “async”
+Lambda::modifier = none or "async"
 
 Query expressions
 
@@ -794,7 +794,7 @@ FromClause, LetClause, WhereClause, JoinClause, OrderByClause
 
 <OrderByClause>
 	<Orderings>
-		<Ordering direction=”{ascending, descending}”>
+		<Ordering direction="{ascending, descending}">
 			<Src>
 				...
 			</Src>
