@@ -1,283 +1,236 @@
-﻿<Type name=”<string>” 
-kind=”<string>” 
-const=”<boolean>”
-ref=”<string>”
-nullable=”<bool>”>
+<Type name="<string>" 
+kind="<string>" 
+const="<boolean>"
+ref="<string>"
+nullable="<bool>">
 <Type kind=’pointer’/>
 </Type>
 
-
 kind = class, enum, struct, union, internal (int, bool, char), array, generic, dynamic, pointer, reference, interface, void, event
 
-
-<VarDecl name=”<string>” 
-auto=”<boolean>”
-constexpr=”<boolean>”
-volatile=”<boolean>”
-id=”<string>”>
-        <Type/>
-        <Init/>
+<VarDecl name="<string>" 
+auto="<boolean>"
+constexpr="<boolean>"
+volatile="<boolean>"
+id="<hash>">
+	<Type/>
+	<Init/>
 </VarDecl>
 
+Ссылка на переменную
+<VarRef ref="<hash>" name="<string>" />
+
+Литерал
+<lit:Integer value="<string>" />
+<lit:Character … />
+<lit:Decimal …/>
 
 
-
-<op:Binary kind=”<string>” assign=”<boolean>”>
-
+<op:Binary kind="<string>" assign="<boolean>">
 
 </op:Binary >
 
-
 <op:Unary
-kind=”<string>”
-prefix=”<boolean>”
-modify=”<boolean>”>
-
+kind="<string>"
+prefix="<boolean>"
+modify="<boolean>">
 
 </op:Unary>
 
-
 <op:SizeOf></op:SizeOf>
-
 
 <op:TypeOf></op:TypeOf>
 
-
-Оператор “is” (C#)
-
+Оператор "is" (C#)
 
 <op:IsType>
-        <Object/> (что угодно)
-        <Type/>
+	<Object/> (что угодно)
+	<Type/>
 </op:IsType>
 
-
-<op:Cast kind=”<string>”>
-        <Type/>
-        <Object/>
+<op:Cast kind="<string>">
+	<Type/>
+	<Object/>
 </op:Cast>
 
-
-для c++ атрибут kind={ dynamic, static, const, reinterpret, simple, functional, postfix } (simple (int)a, functional int(a), оператор “as” (C#) )
-
+для c++ атрибут kind={ dynamic, static, const, reinterpret, simple, functional, postfix } (simple (int)a, functional int(a), оператор "as" (C#) )
 
 Получение адреса элемента (&)
 
-
 <op:AddressOf>
-        <Object />
+	<Object />
 </op:AddressOf>
 
-
 <op:Deref>
-        <Object/>
+	<Object/>
 </op:Deref>
 
-
 <op:Indexer>
-        <Object/>
-        <Params>
-                <Param />
-        </Params>
+	<Object/>
+	<Params>
+		<Param />
+	</Params>
 </op:Indexer>
 
+<Namespace id="<hash>" name="<string>" />
 
-<Namespace id=”<hash>” name=”<string>” />
-
-
-<op:NamespaceUsage name=”<name>” ref=”<hash>” alias=”<string>” />
-
+<op:NamespaceUsage name="<name>" ref="<hash>" alias="<string>" />
 
 Использование объекта из пространства имен (С++)
 
-
 Например: using std::map;
 
-
 <op:ObjectUsage>
-        <Type />
+	<Type />
 </op:ObjectUsage>
-
 
 Объявление синонима для типа (С++)
 
-
-<op:Typedef alias=”<string>”> 
-        <Type />
+<op:Typedef alias="<string>"> 
+	<Type />
 </op:Typedef>
-
 
 (alias может быть пустым)
 
-
 Объявление перечисления
 
-
 <Enum name="<string>" id="<hash>">
-        <Attributes>
-                ...
-        </Attributes> ?
+	<Attributes>
+		...
+	</Attributes> ?
 
+	<Modifiers>
+		...
+	</Modifiers>
 
-        <Modifiers>
-                ...
-        </Modifiers>
+	<BaseType>
+		<Type />
+	</BaseType>
 
-
-        <BaseType>
-                <Type />
-        </BaseType>
-
-
-        <EnumMembers>
-                <EnumMember name="<String>" ref="<hash>">
-                        <Attributes>
-                                <Attribute>
-                                        ...
-                                </Attribute>
-                        </Attributes>
-                        <Value>
-                                ...
-                        </Value>
-                </EnumMember>
-        </EnumMembers>
+	<EnumMembers>
+		<EnumMember name="<String>" ref="<hash>">
+			<Attributes>
+				<Attribute>
+					...
+				</Attribute>
+			</Attributes>
+			<Value>
+				...
+			</Value>
+		</EnumMember>
+	</EnumMembers>
 </Enum>
 
-
-<Union name=”<string>” id=”<hash>”>
-        <Member name=”<string>”>
-                <Type />
-        </Member>        
+<Union name="<string>" id="<hash>">
+	<Member name="<string>">
+		<Type />
+	</Member>	
 </Union>
 
-
-<Method id=”<hash>”>
-        <MethodDecl file=”<string>”/>
-        <MethodDef file=”<string>”/>
+<Method id="<hash>">
+	<MethodDecl file="<string>"/>
+	<MethodDef file="<string>"/>
 </Method>
 
-
-<MethodDecl         id=”<hash>”
-name=”<string>” 
-ref=”<hash>”
-kind=”<string>”>
+<MethodDecl 	id="<hash>"
+name="<string>" 
+ref="<hash>"
+kind="<string>">
 <Return>
-        <Type />
+	<Type />
 </Return>
 
-
 <Attributes>
-                <Attribute />
-        </Attributes>
+		<Attribute />
+	</Attributes>
 
-
-        <FriendTo>
-                <Type />
-        </FriendTo>
-        
+	<FriendTo>
+		<Type />
+	</FriendTo>
+	
 <Modifiers>
-        <Modifier name=”” />
+	<Modifier name="" />
 </Modifiers>
 
-
 <Qualifiers>
-        <Qualifier name=”<string>” />
+	<Qualifier name="<string>" />
 </Qualifiers>
 
-
 <GenericArgs>
-        <Generic />
+	<Generic />
 </GenericArgs>
 
-
 <Args>
-        <Arg id=”<hash>” name=”<string>” >
-                <Type />
-                <DefaultValue> ?
-                        ...
-                </DefaultValue>
-        </Arg>
+	<Arg id="<hash>" name="<string>" >
+		<Type />
+		<DefaultValue> ?
+			...
+		</DefaultValue>
+	</Arg>
 </Args>
 </MethodDecl>
 
-
-kind = constructor, desctructor, method, indexer
-Modifier:name = "new", "public", "protected", "internal", "private", "static", "virtual", "sealed", "override", "abstract", "extern", “constexpr”, “async”, “unsafe”
+kind = constructor, destructor, method, indexer
+Modifier:name = "new", "public", "protected", "internal", "private", "static", "virtual", "sealed", "override", "abstract", "extern", "constexpr", "async", "unsafe"
 Qualifier:name = const, volatile, restrict
 DefaultValue = литерал, константа
 
-
 Реализация метода
 
-
-<MethodDef id=”<hash>” ref=”<hash>”>
+<MethodDef id="<hash>" ref="<hash>">
 <Attributes>
-                <Attribute />
-        </Attributes>
+		<Attribute />
+	</Attributes>
 
+	<Args>
+		<Arg id="<hash>" name="<string>">
+			<Type />
+		</Arg>
+	</Args>
 
-        <Args>
-                <Arg id=”<hash>” name=”<string>”>
-                        <Type />
-                </Arg>
-        </Args>
-
-
-        <Body>
-        </Body>
+	<Body>
+	</Body>
 </MethodDef>
-
-
-
-
 
 
 
 
 Ссылка на использование метода
 
-
-<MethodRef ref=”<hash>” def=”<hash>” decl=”<hash>” /> 
-
-
+<MethodRef ref="<hash>" def="<hash>" decl="<hash>" /> 
 
 
 Объявление свойства (C#)
 
-
-<Property id=”<hash>” name=”<string>”>
+<Property id="<hash>" name="<string>">
 <Return>
-        <Type />
+	<Type />
 </Return>
 
-
 <Attributes>
-                <Attribute />
-        </Attributes>
-
+		<Attribute />
+	</Attributes>
 
 <Modifiers>
-        <Modifier name=”” />
+	<Modifier name="" />
 </Modifiers>
 
-
 <GetAccessor>
-        <Modifier name=”<string>”/>
-        <Body>
-        </Body>
+	<Modifier name="<string>"/>
+	<Body>
+	</Body>
 </GetAccessor>
 
-
 <SetAccessor>
-        <Modifier name=”<string>”/>
-        <Body>
-                … = <SetAccessor:Value/>
-        </Body>
+	<Modifier name="<string>"/>
+	<Body>
+		… = <SetAccessor:Value/>
+	</Body>
 </SetAccessor>
 
 </Property>
 
-
+<PropertyRef ref="<hash>" name="<string>" />
 
 
 Property:Modifier:name =        "new"
@@ -291,8 +244,7 @@ Property:Modifier:name =        "new"
         "override"
         "abstract"
         "extern"
-        “unsafe”
-
+        "unsafe"
 
 GetAccessor:Modifier:name= "protected"
         "internal"
@@ -300,176 +252,147 @@ GetAccessor:Modifier:name= "protected"
         "protected internal"
         "internal protected"
 
-
 Вызов метода, обращение к свойству, полю и т.д.
 
-
 <Call>
-        <Target>
-                ...
-        </Target>
-        <GenericArgs>
-                <Type/>
-                ...
-        </GenericArgs>
-        <Exec>
-        </Exec>
-        
-        <Args>
-                <Value>
-                </Value>
-        </Args>
+	<Target>
+		...
+	</Target>
+	<GenericArgs>
+		<Type/>
+		...
+	</GenericArgs>
+	<Exec>
+	</Exec>
+	
+	<Args>
+		<Value>
+		</Value>
+	</Args>
 </Call>
-
-
 
 
 Обновлено 01.11.2013
 
-
 Объявление события (C#)
 
-
-<EventType id=”<hash>”>
+<EventType id="<hash>">
 <Attributes>
-                <Attribute />
-        </Attributes>
-
+		<Attribute />
+	</Attributes>
 
 <Modifiers>
-        <Modifier name=”” />
+	<Modifier name="" />
 </Modifiers>
-        
-        <Type>
-        </Type>
-        
-        <AddAccessor>
-                <Attributes>
-                        <Attibute>
-                </Attributes>
+	
+	<Type>
+	</Type>
+	
+	<AddAccessor>
+		<Attributes>
+			<Attibute>
+		</Attributes>
 
+		<Block>
+		</Block>
+	</AddAccessor>
 
-                <Block>
-                </Block>
-        </AddAccessor>
-
-
-        <RemoveAccessor>
+	<RemoveAccessor>
 <Attributes>
-                        <Attibute>
-                </Attributes>
+			<Attibute>
+		</Attributes>
 
-
-                <Block>
-                </Block>
-        </RemoveAccessor>
-        
+		<Block>
+		</Block>
+	</RemoveAccessor>
+	
 </EventType>
-
 
 Event:Modifier:name = "new", "public", "protected", "internal", "private", "static", "virtual", "sealed", "override", "abstract", "extern"
 
-
 Использование аттрибутов (C#)
 
+<Attibute name="<string>" kind="<string>">
+	<Type>
+	</Type>
 
-<Attibute name=”<string>” kind=”<string>”>
-        <Type>
-        </Type>
-
-
-        <Target name=”<string>” />
-        
-        <Args>
-                <Arg name=”<string>” />
-        </Args>
+	<Target name="<string>" />
+	
+	<Args>
+		<Arg name="<string>" />
+	</Args>
 </Attibute>
-
 
 Attribute:Target:name = 
 для обычных атрибутов:
-* field
-* event
-* method
-* param
-* property
-* return
-* type
-для аттрибута типа global, могут быть                           
-* assembly
-* module
+field
+event
+method
+param
+property
+return
+type
+для аттрибута типа global, могут быть 	 	 	
+assembly
+module
 
-
-Attibute:kind = “global” или может быть пустым
+Attibute:kind = "global" или может быть пустым
 Attribute:Arg:name - необязательное
-
 
 Объявление делегатов (C#)
 
+<Delegate id="<hash>" name="<string>">
+	<Attibutes>
+		<Attibute>
+	</Attributes>
 
-<Delegate id=”<hash>” name=”<string>”>
-        <Attibutes>
-                <Attibute>
-        </Attributes>
+	<Modifiers>
+		<Modifier name="<string>">
+	</Modifiers>
 
+	<Return>
+		<Type />
+	</Return>
 
-        <Modifiers>
-                <Modifier name=”<string>”>
-        </Modifiers>
+	<VariantParams>
+	</VariantParams>
 
-
-        <ReturnType>
-                <Type />
-        </ReturnType>
-
-
-        <VariantParams>
-        </VariantParams>
-
-
-        <Args>
-                <Arg name=”<string>”>
-                <Type />
-        </Args>
+	<Args>
+		<Arg name="<string>">
+		<Type />
+	</Args>
 </Delegate>
 
-
-Delegate:Modifier:name =                           
-* new
-* public
-* protected
-* internal
-* private
-* unsafe
-
+Delegate:Modifier:name = 	 	 	
+new
+public
+protected
+internal
+private
+unsafe
 
 Параметры для метода, делегата и т.д.
 
-
 <Args>
-        <Arg ref=”<hash>” name=”<string>” modifier=”<string>” paramarr=”[true|false]” ref=”[true|false]” out=”[true|false]” implicit=”[true|false]”>
-                <Attibutes>
-                        <Attibute>
-        </Attributes>
-                
-                <Type />
+	<Arg ref="<hash>" name="<string>" modifier="<string>" paramarr="[true|false]" ref="[true|false]" out="[true|false]" implicit="[true|false]">
+		<Attibutes>
+			<Attibute>
+	</Attributes>
+		
+		<Type />
 
-
-                <Default>
-                        …
-                </Default>
-        </Arg>
+		<Default>
+			…
+		</Default>
+	</Arg>
 </Args>
-
 
 Если выставлен атрибут implicit, то остальные атрибуты, кроме ref и name могут отсутствовать
 
-
 Arg:modifier=
-* ref
-* out
-* this
-
+ref
+out
+this
 
 modifier и paramarr взаимоисключаемы
 paramarr - означает, что список параметров переменной длины
@@ -478,237 +401,186 @@ paramarr - означает, что список параметров перем
 
 
 
-
-
-
-
-
 Обновлено 08.11.2013
-
 
 if
 
-
 <If>
-        <Condition>
-                ...
-        <Condition>
+	<Condition>
+		...
+	<Condition>
 
-        <Then>
-                <Block />
-        </Then>
+	<Then>
+		<Block />
+	</Then>
 
-
-        <Else>
-        </Else>
+	<Else>
+	</Else>
 </IfStatement>
 
-
 switch
-
 
 <Switch>
 <ControllingExpression>
 </ControllingExpression>
 
-
 <Sections>
-        <Section default=”<bool>”>
-                <Labels>
-                        <Label>
-                                ...
-                        </Label>
-                </Labels>
-                
-                <Block />
-        </Section>
+	<Section default="<bool>">
+		<Labels>
+			<Label>
+				...
+			</Label>
+		</Labels>
+		
+		<Block />
+	</Section>
 </Sections>
-
 
 </Switch>
 
-
 while
 
-
 <While>
-        <Condition>
-                ...
-        </Condition>
+	<Condition>
+		...
+	</Condition>
 
-
-        <Block />
+	<Block />
 </While>
-
 
 break
 
-
 <Break />
-
 
 continue
 
-
 <Continue />
-
 
 Section:default и Section:Labels:Label взаимоисключаемы
 
-
 do-while
-
 
 <DoWhile>
 <Condition>
-        ...
+	...
 </Condition>
-
 
 <Block />
 
 
-
 </DoWhile>
-
 
 for
 
-
 <For>
-        <Initializers>
-                ...        
-        </Initializers>
+	<Initializers>
+		...	
+	</Initializers>
 
+	<Condition />
+	
+	<Iterators>
+		<Iterator>
+			...
+		</Iterator>
+	</Iterators>
 
-        <Condition />
-        
-        <Iterators>
-                <Iterator>
-                        ...
-                </Iterator>
-        </Iterators>
-
-
-        <Block />
+	<Block />
 </For>
-
 
 label
 
-
-<Label id=”<hash>” name=“<string>” />
-
+<Label id="<hash>" name="<string>" />
 
 goto
 
-
-<GoTo ref=”<hash>”/>
-
+<GoTo ref="<hash>"/>
 
 throw
 
-
 <Throw>
-        … (Expression)
+	… (Expression)
 </Throw>
-
 
 return
 
-
 <Return>
-        … (Expression)
+	… (Expression)
 </Return>
-
 
 try-catch-finally
 
-
 <Try>
-        <Block />
-        
-        <CatchClauses>
-                <Catch general=”<boolean>”>
-                        <ClassType>
-                                ...
-                        </ClassType>
-                        
-                        <Identifier>
-                                ...
-                        </Identifier>
+	<Block />
+	
+	<CatchClauses>
+		<Catch general="<boolean>">
+			<ClassType>
+				...
+			</ClassType>
+			
+			<Identifier>
+				...
+			</Identifier>
 
+			<Block />
+		</Catch>
 
-                        <Block />
-                </Catch>
-
-        </CatchClauses>
-        
-        <Finally>
-                <Block />
-        </Finally>
+	</CatchClauses>
+	
+	<Finally>
+		<Block />
+	</Finally>
 </Try>
-
 
 foreach
 
-
 <Foreach>
-        <VarDecl />
-        
-        <ForeachIn>
-                … (Expression)
-        </ForeachIn>
-        
-        <Block />
+	<VarDecl />
+	
+	<ForeachIn>
+		… (Expression)
+	</ForeachIn>
+	
+	<Block />
 </Foreach>
-
 
 using
 
-
 <Using>
-        <Resource>
-                ...
-        </Resource>
+	<Resource>
+		...
+	</Resource>
 
-
-        <Block />
+	<Block />
 </Using>
-
 
 lock
 
-
 <Lock>
-        <Resource />
-        
-        <Block />
+	<Resource />
+	
+	<Block />
 </Lock>
-
 
 yield
 
-
 <Yield>
-        … (Expression)
+	… (Expression)
 </Yield>
-
 
 Шаблоны в C++
 Объявление (n3337.pdf, стр 303)
 <GenericParams>
-        <GenericParam name=’<string>’>
-                [<GenericParams>] | [<Type />]
-                [<Default></Default>]
-        </GenericParam>
-        ...
+	<GenericParam name=’<string>’>
+		[<GenericParams>] | [<Type />]
+		[<Default></Default>]
+	</GenericParam>
+	...
 </GenericParams>
 <Class /> | <ClassRef /> | <MethodDecl /> | <MethodRef /> | <MethodDef /> | <FieldDecl />
 
-
 GenericParam::kind = class, typename, generic, type
-
 
 template<class K, class V, int Size, template<class T> class C = myarray>
 class Map {
@@ -717,302 +589,236 @@ class Map {
   int* data[Size];
 };
 
-
 <GenericParams>
-        <GenericParam name=’K’ kind=’class’/>
-        <GenericParam name=’V’ kind=’class’/>
-        <GenericParam name=’Size’ kind=’type’>
+	<GenericParam name=’K’ kind=’class’/>
+	<GenericParam name=’V’ kind=’class’/>
+	<GenericParam name=’Size’ kind=’type’>
 <Type name=’int’ kind=’internal’/>
 </GenericParam>
-        <GenericParam name=’C’ kind=’class’>
-                <GenericParams>
-                        <GenericParam name=’T’ kind=’class’/>
-                </GenericParams>
-                <Default><ClassRef name=’myarray’/></Default>
-        </GenericParam>
+	<GenericParam name=’C’ kind=’class’>
+		<GenericParams>
+			<GenericParam name=’T’ kind=’class’/>
+		</GenericParams>
+		<Default><ClassRef name=’myarray’/></Default>
+	</GenericParam>
 </GenericParams>
 <Class name=’Map’/>
 
-
-(+C#) <Generic name=”<string>” default=”<string>”>
-                <Constraints>
-                        <Type />
-                </Constraints>
+(+C#) <Generic name="<string>" default="<string>">
+		<Constraints>
+			<Type />
+		</Constraints>
           </Generic>
-
 
 Вызов шаблонного метода
 sort<int>(a,sizeof(a))
 (см. в <Call>)
 
-
 Классы С++/С#
-<Class id="<hash>" name="<string>" kind=”<string>” static=”[true|false]” abstract="[true|false]" sealed=”[true|false]” new=”[true|false]” access="<string>” partial=”[true|false]” unsafe=”[true|false]” anonymous=”[true|false]”>
-        <Attributes>
-                <Attribute />
-        </Attributes>
-
+<Class id="<hash>" name="<string>" kind="<string>" static="[true|false]" abstract="[true|false]" sealed="[true|false]" new="[true|false]" access="<string>" partial="[true|false]" unsafe="[true|false]" anonymous="[true|false]">
+	<Attributes>
+		<Attribute />
+	</Attributes>
 
 <TypeParameters>
-        <TypeParameter>
-                <Generic />
-                <Attributes>
-                        <Attribute />
-                </Attributes>
-        </TypeParameter>
-</TypeParameters>        
+	<TypeParameter>
+		<Generic />
+		<Attributes>
+			<Attribute />
+		</Attributes>
+	</TypeParameter>
+</TypeParameters>	
 
-
-<Inherits>        
+<Inherits>	
 <ClassRef />
 </Inherits>
 
+	<Methods>
+		<MethodDecl />
+		<MethodDef />
+	</Methods>
 
-        <Methods>
-                <MethodDecl />
-                <MethodDef />
-        </Methods>
+	<Properties>
+		<Property />
+	</Properties>
 
-
-        <Properties>
-                <Property />
-        </Properties>
-
-
-        <Fields>
-                <FieldDecl />
-        </Fields>
-        <ClassRef />
+	<Fields>
+		<FieldDecl />
+	</Fields>
+	<ClassRef />
 </Class>
 
-
 Ссылка на класс
-<ClassRef name=”<string>” ref=”<hash>” access=”<string>” />
-
-
+<ClassRef name="<string>" ref="<hash>" access="<string>" />
 
 
 kind = class, struct, interface
 access = public, private, protected, internal, friend
 
-
 Объявление поля
 
-
-<FieldDecl id=”<hash>” name=”<string>” constant=”[true|false]”>
-        <Attributes>
-                <Attribute />
-        </Attributes>
-
+<FieldDecl id="<hash>" name="<string>" constant="[true|false]">
+	<Attributes>
+		<Attribute />
+	</Attributes>
 
 <Modifiers>
-        <Modifier name=”<string>” />
+	<Modifier name="<string>" />
 </Modifiers>
 
-
 <GenericArgs>
-                <GenericArg name=’<string>’/>
-                ...
-        </GenericArgs>
+		<GenericArg name=’<string>’/>
+		...
+	</GenericArgs>
 
 
+	<Type />
 
-
-        <Type />
-
-
-        <Initializer>
-                ...
-        </Initializer>
+	<Initializer>
+		...
+	</Initializer>
 </FieldDecl>
-
 
 Field:Modifiers:Modifier:name=
 "new"
-                "public"
-                "protected"
-                "internal"
-                "private"
-                "static"
-                "readonly"
-                "volatile"
-        “unsafe”
-
+        	"public"
+        	"protected"
+        	"internal"
+        	"private"
+        	"static"
+        	"readonly"
+        	"volatile"
+	"unsafe"
 
 Ссылка на поле
-<FieldRef ref=”<hash>” name=”<string>” />
-
+<FieldRef ref="<hash>" name="<string>" />
 
 Cheched / Unchecked
 
-
 <Checked>
-        …
+	…
 </Checked>
 
-
 <Unchecked>
-        ...
+	...
 </Unchecked>
-
 
 async / await
 
-
 async см. MethodDecl
-
 
 await
 
-
 <Await>
-        <Call />
+	<Call />
 </Await>
 
-
-<Block unsafe=”[true|false]”>
+<Block unsafe="[true|false]">
 </Block>
-
 
 Anonymous Functions (Lambda expressions)
 
+<Lambda modifier="<string>" delegate="[true|false]">
+	<Args>
+		<Arg />
+	</Args>
 
-<Lambda modifier=”<string>” delegate=”[true|false]”>
-        <Args>
-                <Arg />
-        </Args>
-
-
-        <Block />
+	<Block />
 </Lambda>
 
-
-Lambda::modifier = none or “async”
-
+Lambda::modifier = none or "async"
 
 Query expressions
 
-
 <Query>
-        <FromClause>
-                <Arg />
-                <InExpr>
-                        ...
-                </InExpr>
+	<FromClause>
+		<Arg />
+		<InExpr>
+			...
+		</InExpr>
 
+	<QueryBody>
+		<QueryBodyClauses>
+			<QueryBodyClause />
+		</QueryBodyClauses>
+		
+		<QueryBodyOperation>
+			
+		</QueryBodyOperation>
+		
+		<QueryContinuaton>
+			<Into>
+				<Id … />
 
-        <QueryBody>
-                <QueryBodyClauses>
-                        <QueryBodyClause />
-                </QueryBodyClauses>
-                
-                <QueryBodyOperation>
-                        
-                </QueryBodyOperation>
-                
-                <QueryContinuaton>
-                        <Into>
-                                <Id … />
-
-
-                                <QuaryBody />
-                        </Into>
-                </QueryContinuation>
-                
-        </QueryBody>
-        </FromClause>
+				<QuaryBody />
+			</Into>
+		</QueryContinuation>
+		
+	</QueryBody>
+	</FromClause>
 </Query>
-
 
 QueryBodyClause - 
 FromClause, LetClause, WhereClause, JoinClause, OrderByClause
 
-
 <LetClause>
-        <Identifier />
-        <Source>
-                ...
-        </Source>
+	<Identifier />
+	<Source>
+		...
+	</Source>
 </LetClause>
 
-
 <WhereClause>
-        ...
+	...
 </WhereClause>
 
-
 <JoinClause>
-        <Arg />
+	<Arg />
 
+	<InExpr>
+		...
+	</InExpr>
 
-        <InExpr>
-                ...
-        </InExpr>
+	<OnExpr>
+		...
+	</OnExpr>
 
+	<EqualsExpr>
+		…
+	</EqualsExpr>
 
-        <OnExpr>
-                ...
-        </OnExpr>
-
-
-        <EqualsExpr>
-                …
-        </EqualsExpr>
-
-
-        <IntoExpr>
-                ...
-        </IntoExpr>
+	<IntoExpr>
+		...
+	</IntoExpr>
 </JoinClause>
 
-
 <OrderByClause>
-        <Orderings>
-                <Ordering direction=”{ascending, descending}”>
-                        <Src>
-                                ...
-                        </Src>
-                </Ordering>
-        </Orderings>
+	<Orderings>
+		<Ordering direction="{ascending, descending}">
+			<Src>
+				...
+			</Src>
+		</Ordering>
+	</Orderings>
 </OrderByClause>
-
 
 <QueryBodyOperation> - SelectClause, GroupClause
 
-
 <SelectClause>
-        <Src>
-                ...
-        </Src>
+	<Src>
+		...
+	</Src>
 </SelectClause>
 
-
 <GroupClause>
-        <Src>
-                …
-        </Src>
+	<Src>
+		…
+	</Src>
 
-
-        <ByExpr>
-                …
-        </ByExpr>
+	<ByExpr>
+		…
+	</ByExpr>
 </GroupClause>
-
 
 Query::From::Arg содержит только тип (опционально) и идентификатор
 
-
-TODO
-
-
-Preprocessing directives (C#/C++) (если я точно помню, в clang разбирается уже конечный вариант)
-Expression tree types (тут я затроил)
-Lambda expressions (C#/C++)
-Anonymous methods (C#/C++)
-Generics (C#/C++)
-Async/await
-Checked/unchecked
-Anonymous objects (помечаем класс как анонимный - выставляем атрибут anonymous)
-Unsafe
-Query expressions
-Classes (C#/C++)
