@@ -1,3 +1,5 @@
 # Intermediate representation example
 
-Tested project - [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
+Tested projects:
+* [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
+* [NancyFx](https://github.com/NancyFx/Nancy/tree/master/src/Nancy)
