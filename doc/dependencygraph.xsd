@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="dependency_graph">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="entities" />
+                <xs:element name="relations" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="EntityType">
+        <xs:attribute name="id" type="xs:integer" use="required"/>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="type" type="xs:integer" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="class"/>
+                    <xs:enumeration value="interface"/>
+                    <xs:enumeration value="method"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:element name="entities">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="entity" type="EntityType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="relations">
+        <xs:complexType>
+            <xs:element name="relation">
+                <xs:simpleType>
+                    <xs:attribute name="from" type="xs:integer" use="required"/>
+                    <xs:attribute name="to" type="xs:integer" use="required"/>
+                    <xs:attribute name="type" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="member"/>
+                                <xs:enumeration value="inheritance"/>
+                                <xs:enumeration value="call"/>
+                                <xs:enumeration value="injection"/>
+                                <xs:enumeration value="parametrization"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="duck" type="xs:boolean" use="optional"/>
+                    <xs:attribute name="polymorphic" type="xs:boolean" use="optional"/>
+                    <xs:attribute name="implicit" type="xs:boolean" use="optional"/>
+                </xs:simpleType>
+            </xs:element>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
